@@ -31,3 +31,13 @@ class HomePage(models.Model):
     @property
     def field(self):
         return "body"
+
+
+class New(models.Model):
+    "Generated Model"
+    user = models.ForeignKey(
+        "home.CustomText", on_delete=models.CASCADE, related_name="new_user",
+    )
+    schedule = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="new_schedule",
+    )
